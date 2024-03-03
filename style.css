@@ -1,0 +1,185 @@
+:root {
+    --background-color: #1c1c1c;
+    --red: #f23131;
+    --yellow: #ff9500;
+    --green: #32cd32;
+    --transition-duration: 0.2s; 
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    background:  url(pokeball.png), linear-gradient(var(--background-color), var(--background-color));
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+label {
+    color: #f0f0f0;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    border: none;
+    margin-top: 5px;
+    border-radius: 15px;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: white;
+}
+
+button:hover {
+    filter: brightness(0.9);
+}
+button:active {
+    filter: brightness(0.8);
+}
+
+#searchButton {
+    margin-left: 15px;
+    margin-right: 15px;
+    filter: drop-shadow(none);
+    color: black;
+}
+#loading {
+    height: 30px;
+    margin-left: 15px;
+    color: #f0f0f0;
+}
+
+.statusHeader {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.uncaughtButton {
+    margin-top: 0px;
+    background-color: var(--red);
+}
+.inProgressButton {
+    background-color: var(--yellow);
+}
+.caughtButton {
+    background-color: var(--green);
+}
+
+#mons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    width: 120px;
+    height: 140px;
+    margin: 25px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    border: 5px solid #000000;
+    transition-duration: var(--transition-duration);
+    background: linear-gradient(white, #e3e7ed);
+}
+
+.cardex {
+    position: relative;
+    width: 120px;
+    height: 140px;
+    margin: 25px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    border: 5px solid #000000;
+    transition-duration: var(--transition-duration);
+    background: linear-gradient(white, #e3e7ed);
+}
+
+.card:hover {
+    background-color: #d6d6d6;
+}
+
+
+.cardHoverOverlay {
+    display: flex;
+    position: absolute;
+    margin-left: 10px;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition-duration: var(--transition-duration);
+    color: #1c1c1c;
+}
+.card:hover > .cardHoverOverlay {
+    opacity: 100;
+}
+
+.uncaught {
+    border-color: var(--red);
+}
+.in-progress {
+    border-color: var(--yellow);
+}
+.caught {
+    border-color: var(--green);
+}
+
+.hidden {
+    display: none;
+}
+
+.portrait {
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    transition-duration: var(--transition-duration);
+}
+.card:hover > .portrait {
+    filter: brightness(0.9) blur(3px);
+}
+.card:hover > .idContainer {
+    filter: brightness(0.9) blur(3px);
+}
+
+.portrait img {
+    /* background-image: url(checkerboard.png); */
+    /* background-color: #00000020; */
+    background-size: 100% auto;
+}
+
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    margin: 0px;
+}
+
+.nameContainer {
+    margin-top: -15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.name {
+    font-size: 15px;
+    text-align: center;
+    overflow:visible;
+}
+.idContainer {
+    line-height: 0px;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 5px;
+}
+.id {
+    color: #888888;
+    font-size: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+}

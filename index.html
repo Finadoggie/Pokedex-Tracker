@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Pokedex Manager</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+    </style>
+</head>
+
+<body>
+    <div id="searchBar">
+        <label for="dexes">Select a Pokédex to view:</label>
+        <select name="dexes" id="dexes"></select>
+        <button id="searchButton" onclick="generatePokemon()">Search</button>
+        <label for="shown">Display:</label>
+        <select name="shown" id="shown" onchange="display()">
+            <option>all</option>
+            <option>uncaught</option>
+            <option>in-progress</option>
+            <option>caught</option>
+        </select>
+        <h6 id="loading"></h6>
+    </div>
+    
+    <br>
+    
+    <div id="mons">
+        <div class="cardex" id="bulbasaur" style="border-color: var(--red);">
+            
+            <div class="idContainer">
+                <p class="id">Local</p>
+                <p class="id">National</p>
+            </div>
+            <div class="cardHoverOverlay">
+                <p class="statusHeader">Set status</p>
+                <button class="uncaughtButton">Uncaught</button>
+                <button class="inProgressButton">In Progress</button>
+                <button class="caughtButton">Caught</button>
+            </div>
+            <div class="portrait">
+                <div class="nameContainer">
+                    <p class="name">Name</p>
+                </div>
+                <div>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/700.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="exampletxt" style="text-align: center; color: white; line-height: 0px;">Example Card</h1>
+    <h6 class="exampletxt" style="text-align: center; color: grey;">(non-functional)</h6>
+<script src="script.js"></script>
+</body>
+
+</html>
